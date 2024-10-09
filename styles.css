@@ -1,0 +1,211 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff0f5;
+    color: #4a4a4a;
+}
+
+header {
+    background-color: #ffccf2;
+    text-align: center;
+    padding: 50px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 3em;
+    color: #ff1493;
+    margin: 0;
+}
+
+p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Galería de fotos */
+#galeria {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+#galeria h2 {
+    font-size: 2.5em;
+    color: #ff69b4;
+    margin-bottom: 30px;
+}
+
+.fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.fotos img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.fotos img:hover {
+    transform: scale(1.05);
+}
+
+/* Sección de recuerdos */
+#historias {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fdf0ff;
+}
+
+#historias h2 {
+    font-size: 2.5em;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+#historias p {
+    font-size: 1.2em;
+    color: #4a4a4a;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Formulario de mensajes */
+#formulario-recuerdos {
+    background-color: #ffe6f7;
+    padding: 50px 20px;
+    border-radius: 15px;
+    width: 50%;
+    margin: 30px auto;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+#formulario-recuerdos h2 {
+    font-size: 2.2em;
+    color: #ff1493;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+    color: #ff1493;
+}
+
+input, textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #fff;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 15px;
+    background-color: #ff1493;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff69b4;
+}
+
+/* Pie de página */
+footer {
+    background-color: #ffccf2;
+    text-align: center;
+    padding: 20px;
+    color: #ff1493;
+    font-size: 1.2em;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    #formulario-recuerdos {
+        width: 90%;
+    }
+
+    #galeria h2, #historias h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+}
+/* Galería de imágenes */
+.fotos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.fotos img {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.fotos img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para la imagen ampliada (modal) */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 100; /* Para que aparezca encima de todo */
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+}
+
+.modal-contenido {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#cerrar {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#cerrar:hover {
+    color: #ffccf2;
+}
+

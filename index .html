@@ -1,0 +1,119 @@
+<html lang="es">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>6 Años de Amor</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="">
+
+    </head>
+<body>
+    <header>
+        <h1> &#x1F496; &#x1F618; 6 Años de Amor &#x1F496; &#x1F618; </h1>
+        <p>Una página para celebrar nuestra historia juntos. &#x1F496; &#x1F618;</p>
+
+        <audio controls autoplay loop>
+            <source src="kimi no uso.mp3"type="audio/mpeg">
+            <source src="kimi no uso.ogv"type="audio/ogg">
+            <source src="10cm Spring Snow.mp3"type="audio/mpeg">
+            <source src="10cm Spring Snow.ogv"type="audio/ogg">
+            <source src="Best Of Me.mp3"type="audio/mpeg">
+            <source src="Best Of Me.ogv"type="audio/ogg">
+            <source src="Confess To You.mp3"type="audio/mpeg">
+            <source src="Confess To You.ogv"type="audio/ogg">
+            <source src="EUPHORIA.mp3"type="audio/mpeg">
+            <source src="EUPHORIA.ogv"type="audio/ogg">
+            <source src="I Wanna Be Yours.mp3"type="audio/mpeg">
+            <source src="I Wanna Be Yours.ogv"type="audio/ogg">
+            <source src="Love Maze.mp3"type="audio/mpeg">
+            <source src="Love Maze.ogv"type="audio/ogg">
+            <source src="Ruth B.mp3"type="audio/mpeg">
+            <source src="Ruth B.ogv"type="audio/ogg">
+            <source src="Snow Flower.mp3"type="audio/mpeg">
+            <source src="Snow Flower.ogv"type="audio/ogg">
+            <source src="V BTS.mp3"type="mpeg">
+            <source src="V BTS.ogv"type="ogg">
+            <source src="Wonstein Your existence.mp3"type="mpeg">
+            <source src="Wonstein Your existence.ogv"type="ogg">
+
+    </header>
+
+    <section id="galeria">
+        <h2> &#x1F496; Momentos Inolvidables &#x1F496;</h2>
+        <div class="fotos">
+            <img src="1.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="2.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="3.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="4.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="5.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="6.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="7.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="8.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="9.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="10.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="11.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="12.jpg" alt="&#x1F496;" class="imagen-ampliable">
+        
+        </div>
+        <div id="imagen-agrandada" class="modal">
+            <span id="cerrar">&times;</span>
+            <img class="modal-contenido" id="img-agrandada">
+        </div>
+
+    </section>
+
+    <section id="historias">
+        <h2> &#x1F60A; Nuestros Recuerdos &#x1F60A;</h2>
+        <p>Aquí hemos compartido tantas aventuras increíbles, momentos llenos de amor, alegría y risas. Cada día a tu lado ha sido especial.</p>
+        <p>Desde la primera vez que nos vimos hasta este día, todo ha sido una maravillosa historia de amor que continúa escribiéndose.</p>
+    </section>
+
+    <section id="formulario-recuerdos">
+        <h2>Escribe tu Mensaje</h2>
+        <form action="#" method="POST">
+            <label for="nombre">Tu nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+            <label for="recuerdo">Tu mensaje:</label>
+            <textarea id="recuerdo" name="recuerdo" placeholder="Escribe aquí un mensaje especial..." rows="4" required></textarea>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Gracias por estos 6 años maravillosos juntos. Te amo. &#x1F60D; &#x1F60A; </p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+    // Selecciona todos los elementos de la clase "imagen-ampliable"
+    const imagenes = document.querySelectorAll('.imagen-ampliable');
+    const modal = document.getElementById("imagen-agrandada");
+    const modalImg = document.getElementById("img-agrandada");
+    const cerrar = document.getElementById("cerrar");
+
+    // Al hacer clic en una imagen, se muestra en el modal
+    imagenes.forEach(img => {
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+    });
+
+    // Cerrar el modal al hacer clic en la "x"
+    cerrar.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Cerrar el modal al hacer clic fuera de la imagen
+    modal.onclick = function(event) {
+        if (event.target !== modalImg) {
+            modal.style.display = "none";
+        }
+    };
+</script>
