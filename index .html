@@ -1,0 +1,321 @@
+<html lang="es">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>6 Años de Amor</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="">
+
+    </head>
+<body>
+    <header>
+        <h1> &#x1F496; &#x1F618; 6 Años de Amor &#x1F496; &#x1F618; </h1>
+        <p>Una página para celebrar nuestra historia juntos. &#x1F496; &#x1F618;</p>
+        <div class="custom-player">
+            <h2>Reproductor de Música</h2>
+            <div class="controls">
+                <button id="prevBtn">⏮️</button>
+                <button id="playPauseBtn">▶️</button>
+                <button id="nextBtn">⏭️</button>
+            </div>
+            <div class="progress-container" id="progressContainer">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="time">
+                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+            </div>
+        </div>
+        
+        <!-- Lista de canciones oculta -->
+        <ul id="playlist">
+            <li data-src="kimi no uso.mp3">Kimi no Uso</li>
+            <li data-src="10cm Spring Snow.mp3">10cm Spring Snow</li>
+            <li data-src="Best Of Me.mp3">Best Of Me</li>
+            <li data-src="Confess To You.mp3">Confess To You</li>
+            <li data-src="EUPHORIA.mp3">Euphoria</li>
+            <li data-src="I Wanna Be Yours.mp3">I Wanna Be Yours</li>
+            <li data-src="Love Maze.mp3">Love Maze</li>
+            <li data-src="Ruth B.mp3">Ruth B</li>
+            <li data-src="Snow Flower.mp3">Snow Flower</li>
+            <li data-src="V BTS.mp3">V BTS</li>
+            <li data-src="Wonstein Your existence.mp3">Wonstein - Your Existence</li>
+        </ul>
+        
+        <audio id="audioPlayer" src=""></audio>
+        
+
+    </header>
+
+    <section id="galeria">
+        <h2> &#x1F496; Momentos Inolvidables &#x1F496;</h2>
+        <div class="fotos">
+            <img src="1.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="2.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="3.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="4.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="5.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="6.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="7.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="8.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="9.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="10.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="11.jpg" alt="&#x1F496;" class="imagen-ampliable">
+            <img src="12.jpg" alt="&#x1F496;" class="imagen-ampliable">
+        
+        </div>
+        <div id="imagen-agrandada" class="modal">
+            <span id="cerrar">&times;</span>
+            <img class="modal-contenido" id="img-agrandada">
+        </div>
+
+    </section>
+
+    <section id="historias">
+        <h2> &#x1F60A; Nuestros Recuerdos &#x1F60A;</h2>
+        <p>Aquí hemos compartido tantas aventuras increíbles, momentos llenos de amor, alegría y risas. Cada día a tu lado ha sido especial.</p>
+        <p>Desde la primera vez que nos vimos hasta este día, todo ha sido una maravillosa historia de amor que continúa escribiéndose.</p>
+    </section>
+
+    <section id="formulario-recuerdos">
+        <h2>Escribe tu Mensaje</h2>
+        <form action="#" method="POST">
+            <label for="nombre">Tu nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+            <label for="recuerdo">Tu mensaje:</label>
+            <textarea id="recuerdo" name="recuerdo" placeholder="Escribe aquí un mensaje especial..." rows="4" required></textarea>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Gracias por estos 6 años maravillosos juntos. Te amo. &#x1F60D; &#x1F60A; </p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</script>
+
+</html>
+<script>
+    // Selecciona todos los elementos de la clase "imagen-ampliable"
+    const imagenes = document.querySelectorAll('.imagen-ampliable');
+    const modal = document.getElementById("imagen-agrandada");
+    const modalImg = document.getElementById("img-agrandada");
+    const cerrar = document.getElementById("cerrar");
+
+    // Al hacer clic en una imagen, se muestra en el modal
+    imagenes.forEach(img => {
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+    });
+
+    // Cerrar el modal al hacer clic en la "x"
+    cerrar.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Cerrar el modal al hacer clic fuera de la imagen
+    modal.onclick = function(event) {
+        if (event.target !== modalImg) {
+            modal.style.display = "none";
+        }
+    };
+</script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .custom-player {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        .custom-player h2 {
+            color: #ff69b4;
+            font-size: 24px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .controls button {
+            background-color: #ff69b4;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .controls button:hover {
+            background-color: #ff1493;
+        }
+
+        .progress-container {
+            width: 100%;
+            background: #ddd;
+            height: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .progress {
+            background-color: #ff69b4;
+            height: 100%;
+            width: 0;
+            border-radius: 5px;
+        }
+
+        /* Ocultar la lista de canciones */
+        ul#playlist {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="custom-player">
+        <h2>Reproductor de Música</h2>
+        <div class="controls">
+            <button id="prevBtn">⏮️</button>
+            <button id="playPauseBtn">▶️</button>
+            <button id="nextBtn">⏭️</button>
+        </div>
+        <div class="progress-container" id="progressContainer">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div class="time">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+    </div>
+
+    <!-- Lista de canciones oculta -->
+    <ul id="playlist">
+        <li data-src="kimi no uso.mp3">Kimi no Uso</li>
+        <li data-src="10cm Spring Snow.mp3">10cm Spring Snow</li>
+        <li data-src="Best Of Me.mp3">Best Of Me</li>
+        <li data-src="Confess To You.mp3">Confess To You</li>
+        <li data-src="EUPHORIA.mp3">Euphoria</li>
+        <li data-src="I Wanna Be Yours.mp3">I Wanna Be Yours</li>
+        <li data-src="Love Maze.mp3">Love Maze</li>
+        <li data-src="Ruth B.mp3">Ruth B</li>
+        <li data-src="Snow Flower.mp3">Snow Flower</li>
+        <li data-src="V BTS.mp3">V BTS</li>
+        <li data-src="Wonstein Your existence.mp3">Wonstein - Your Existence</li>
+    </ul>
+
+    <audio id="audioPlayer" src=""></audio>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const progressContainer = document.getElementById('progressContainer');
+        const progress = document.getElementById('progress');
+        const currentTimeElem = document.getElementById('currentTime');
+        const durationElem = document.getElementById('duration');
+        const playlist = document.getElementById('playlist');
+        const songs = playlist.querySelectorAll('li');
+        let songIndex = 0;
+    
+        // Cargar la primera canción al inicio
+        loadSong(songs[songIndex]);
+    
+        // Cargar una canción
+        function loadSong(song) {
+            audioPlayer.src = song.getAttribute('data-src');
+            audioPlayer.play();
+            playPauseBtn.textContent = '⏸️'; // Cambia el botón a pausa
+        }
+    
+        // Reproducir o pausar canción
+        playPauseBtn.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseBtn.textContent = '⏸️'; // Pausa
+            } else {
+                audioPlayer.pause();
+                playPauseBtn.textContent = '▶️'; // Reproducir
+            }
+        });
+    
+        // Cambiar a la canción anterior
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            songIndex = (songIndex - 1 + songs.length) % songs.length;
+            loadSong(songs[songIndex]);
+        });
+    
+        // Cambiar a la siguiente canción
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            songIndex = (songIndex + 1) % songs.length;
+            loadSong(songs[songIndex]);
+        });
+    
+        // Detectar el fin de una canción y pasar a la siguiente automáticamente
+        audioPlayer.addEventListener('ended', () => {
+            songIndex = (songIndex + 1) % songs.length;
+            loadSong(songs[songIndex]);
+        });
+    
+        // Actualizar el progreso de la barra mientras se reproduce
+        audioPlayer.addEventListener('timeupdate', () => {
+            const { currentTime, duration } = audioPlayer;
+            const progressPercent = (currentTime / duration) * 100;
+            progress.style.width = `${progressPercent}%`;
+    
+            // Actualizar el tiempo actual y la duración
+            let minutes = Math.floor(currentTime / 60);
+            let seconds = Math.floor(currentTime % 60);
+            currentTimeElem.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    
+            if (duration) {
+                minutes = Math.floor(duration / 60);
+                seconds = Math.floor(duration % 60);
+                durationElem.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            }
+        });
+    
+        // Permitir hacer clic en la barra de progreso para cambiar el tiempo
+        progressContainer.addEventListener('click', (e) => {
+            const width = progressContainer.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audioPlayer.duration;
+            audioPlayer.currentTime = (clickX / width) * duration;
+        });
+    
+        // Cambiar canción cuando se haga clic en una canción de la lista
+        songs.forEach((song, index) => {
+            song.addEventListener('click', () => {
+                songIndex = index;
+                loadSong(song);
+            });
+        });
+    </script>    
+</body>
+</html>
+
